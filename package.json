@@ -9,13 +9,27 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo/metro-runtime": "~3.2.3",
+    "@react-native-async-storage/async-storage": "1.23.1",
+    "@react-native-clipboard/clipboard": "^1.14.2",
+    "@react-navigation/native": "^6.1.18",
+    "@react-navigation/native-stack": "^6.11.0",
+    "@types/react": "~18.2.79",
     "expo": "~51.0.28",
-    "expo-status-bar": "~1.12.1",
+    "expo-sqlite": "~14.0.6",
+    "pako": "^2.1.0",
     "react": "18.2.0",
-    "react-native": "0.74.5"
+    "react-dom": "18.2.0",
+    "react-native": "0.74.5",
+    "react-native-paper": "^5.12.5",
+    "react-native-paper-dropdown": "^2.3.1",
+    "react-native-web": "~0.19.10",
+    "sql.js": "^1.11.0",
+    "typescript": "~5.3.3"
   },
   "devDependencies": {
-    "@babel/core": "^7.20.0"
+    "@types/react-native-sqlite-storage": "^6.0.5",
+    "@types/sql.js": "^1.4.9"
   },
   "private": true
 }
