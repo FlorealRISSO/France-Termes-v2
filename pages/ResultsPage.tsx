@@ -17,7 +17,7 @@ const ResultsPage = ({ route }: { route: any }) => {
         <Link to="/Home">
           <IconButton icon="arrow-left" />
         </Link>
-        <Appbar.Content title="Results" />
+        <Appbar.Content title="Résultat" />
       </Appbar.Header>
       <FlatList
         data={terms}

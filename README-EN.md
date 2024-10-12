@@ -92,7 +92,12 @@ This configuration allows you to use the right database implementation for each 
 
 ## Screenshots
 
-(To be added - Include screenshots of web and mobile interface showing key features)
+![Home](./readme-assets/home.png)
+![Domains](./readme-assets/domains.png)
+![Suggestions](./readme-assets/suggestions.png)
+![Results](./readme-assets/results.png)
+![Word](./readme-assets/word.png)
+![Info](./readme-assets/info.png)
 
 ## Contribution and bug reporting
 

@@ -92,7 +92,12 @@ Cette configuration permet d'utiliser la bonne implémentation de base de donné
 
 ## Captures d'écran
 
-(À ajouter - Inclure des captures d'écran de l'interface web et mobile montrant les principales fonctionnalités)
+![Home](./readme-assets/home.png)
+![Domains](./readme-assets/domains.png)
+![Suggestions](./readme-assets/suggestions.png)
+![Results](./readme-assets/results.png)
+![Word](./readme-assets/word.png)
+![Info](./readme-assets/info.png)
 
 ## Contribution et signalement de bugs
 
@@ -110,4 +115,3 @@ FranceTermes est un projet open-source et les contributions sont les bienvenues.
 ## Contact et support
 
 Pour toute question, suggestion ou problème technique, n'hésitez pas à me contacter.
-
