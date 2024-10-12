@@ -4,7 +4,7 @@
 
 ## Disponibilité
 
-- [Web App](http://france-termes.risso.eu/)
+- [Web App](https://francetermes.github.io/)
 - Android (lien à venir)
 
 ## Qu'est-ce que FranceTermes ?
