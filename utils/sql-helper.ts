@@ -118,7 +118,7 @@ ORDER BY ra.id;
 WITH MatchingArticles AS (
   SELECT DISTINCT t.idArticle AS article_id
   FROM Term t
-  WHERE t.word LIKE '${query}%'
+  WHERE t.word LIKE "${query}%"
 ),
 TermsWithStatus AS (
     SELECT 
@@ -165,7 +165,7 @@ ORDER BY ma.article_id;
 WITH MatchingArticles AS (
   SELECT DISTINCT t.idArticle AS article_id
   FROM Term t
-  WHERE t.word LIKE '${query}%'
+  WHERE t.word LIKE "${query}%"
 ),
 TermsWithStatus AS (
     SELECT 
@@ -190,7 +190,7 @@ MatchingDomains AS (
     FROM Domain d
     JOIN ArticleDomains ad ON ad.domainId = d.id
     WHERE ad.articleId IN (SELECT article_id FROM MatchingArticles)
-    AND d.name = '${selectedDomain}'
+    AND d.name = "${selectedDomain}"
 )
 
 SELECT 
@@ -235,7 +235,8 @@ WHERE a.id = ${articleId}`;
     }
 
     static buildPreviewQuery(articleId: number) {
-        return `WITH TermStatut2 AS (
+        return `
+WITH TermStatut2 AS (
     SELECT t.word AS word_statut_2
     FROM Term t
     WHERE t.idArticle = ${articleId} AND t.statut = 2
@@ -251,7 +252,7 @@ ArticleDomain AS (
     SELECT d.name AS domain_name
     FROM ArticleDomains ad
     JOIN Domain d ON d.id = ad.domainId
-    WHERE ad.articleId = ${articleId}
+    WHERE ad.articleId = ${articleId} 
     LIMIT 1
 )
 SELECT 
@@ -259,9 +260,10 @@ SELECT
     ad.domain_name,
     ts6.word_statut_6
 FROM TermStatut2 ts2
-JOIN TermStatut6 ts6 ON 1 = 1
-JOIN ArticleDomain ad ON 1 = 1;
-`}
+JOIN ArticleDomain ad ON 1 = 1
+LEFT JOIN TermStatut6 ts6 ON 1 = 1; 
+        `
+    }
 
     static buildToponymQuery(articleId: number) {
         return `
@@ -282,7 +284,7 @@ GROUP BY
         return `
             SELECT t.idArticle AS article_id, t.word AS term
             FROM Term t
-            WHERE t.word LIKE '${query}%'
+            WHERE t.word LIKE "${query}%"
             ORDER BY t.word
             LIMIT 20;
             `;
@@ -294,8 +296,8 @@ GROUP BY
             FROM Term t
             JOIN ArticleDomains ad ON t.idArticle = ad.articleId 
             JOIN Domain d ON ad.domainId = d.id
-            WHERE t.word LIKE '${query}%' 
-            AND d.name = '${selectedDomain}' 
+            WHERE t.word LIKE "${query}%" 
+            AND d.name = "${selectedDomain}" 
             ORDER BY t.word
             LIMIT 20;
         `

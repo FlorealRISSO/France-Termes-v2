@@ -25,12 +25,15 @@ const ArticlePage: React.FC = () => {
     const toSee = GenericSqlFetch.fetchToSee(db, articleId);
     const toSeeTerms = [];
     for (const id of toSee) {
-        const term = GenericSqlFetch.fetchPreview(db, id);
-        if (term) {
-            toSeeTerms.push(term);
+        try {
+            const term = GenericSqlFetch.fetchPreview(db, id);
+            if (term) {
+                toSeeTerms.push(term);
+            }
+        } catch (error) {
+            console.error(`Error fetching the article ${id}:`, error);
         }
     }
-
     const domains = GenericSqlFetch.fetchDomains(db, articleId);
     const isToponym = domains.length > 0 && domains[0].field === 'Toponymie';
 

@@ -29,6 +29,7 @@ class WebSqlFetch {
             sql = SqlHelper.buildSuggestionsWithDomainQuery(query, selectedDomain);
         }
 
+
         return executeQuery(db, sql) as [number, string][];
     }
 
